@@ -1,0 +1,7 @@
+const opening=document.getElementById('opening'),openBtn=document.getElementById('openBtn'),site=document.getElementById('site'),music=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicBtn');
+openBtn.onclick=()=>{opening.classList.add('hide');site.style.display='block';document.body.style.overflow='auto';music.play().catch(()=>{});musicBtn.innerHTML='❚❚ <span>Music</span>';let autoScroll=setInterval(()=>{window.scrollBy({top:1,left:0,behavior:'auto'})},40);['wheel','touchmove','mousedown','keydown'].forEach(evt=>{window.addEventListener(evt,()=>{clearInterval(autoScroll)},{once:true})});};
+document.body.style.overflow='hidden';
+musicBtn.onclick=()=>{if(music.paused){music.play().catch(()=>{});musicBtn.innerHTML='❚❚ <span>Music</span>'}else{music.pause();musicBtn.innerHTML='♪ <span>Music</span>'}};
+const weddingDate=new Date('2026-09-04T17:00:00+04:30').getTime();
+function updateCountdown(){let x=Math.max(0,weddingDate-Date.now()),d=Math.floor(x/86400000);x%=86400000;let h=Math.floor(x/3600000);x%=3600000;let m=Math.floor(x/60000),s=Math.floor(x/1000)%60;days.textContent=String(d).padStart(2,'0');hours.textContent=String(h).padStart(2,'0');minutes.textContent=String(m).padStart(2,'0');seconds.textContent=String(s).padStart(2,'0')}updateCountdown();setInterval(updateCountdown,1000);
+const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>observer.observe(e));
