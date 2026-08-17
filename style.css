@@ -29,33 +29,15 @@ body {
   z-index: 1000;
   display: grid;
   place-items: center;
-  /* Colorful wedding mesh gradient combining royal emerald, warm burgundy/magenta, and gold shimmer */
+  /* Wedding Floral Arch Background with mesh gradient overlay */
   background: 
-    radial-gradient(circle at 15% 20%, rgba(215, 189, 131, 0.45) 0%, transparent 45%),
-    radial-gradient(circle at 85% 25%, rgba(139, 30, 63, 0.55) 0%, transparent 50%),
-    radial-gradient(circle at 75% 80%, rgba(92, 36, 71, 0.6) 0%, transparent 50%),
-    radial-gradient(circle at 20% 85%, rgba(45, 95, 70, 0.65) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(215, 189, 131, 0.25) 0%, transparent 60%),
-    linear-gradient(135deg, #182c21 0%, #2a1425 40%, #173829 70%, #0d1a12 100%);
-  background-size: 140% 140%;
-  animation: openingGradient 12s ease infinite alternate;
+    radial-gradient(circle at 50% 50%, rgba(20, 36, 26, 0.65) 0%, rgba(10, 20, 14, 0.88) 100%),
+    linear-gradient(135deg, rgba(139, 30, 63, 0.35) 0%, rgba(215, 189, 131, 0.25) 50%, rgba(45, 95, 70, 0.4) 100%),
+    url('wedding_arch_bg.png') center/cover no-repeat;
   color: #f6f1e7;
   text-align: center;
   transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.9s;
   overflow: hidden;
-}
-
-/* Dynamic shifting background color animation */
-@keyframes openingGradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
 }
 
 .opening:before {
@@ -72,29 +54,30 @@ body {
   pointer-events: none;
 }
 
-/* Glassmorphism Luxury Opening Card */
+/* Glassmorphism Luxury Arch Opening Card */
 .opening-card {
   position: relative;
   z-index: 2;
-  padding: 48px 36px;
+  padding: 52px 38px;
   max-width: 520px;
   width: 90%;
   margin: 20px;
-  background: rgba(22, 36, 28, 0.55);
+  background: rgba(18, 32, 24, 0.65);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1.5px solid rgba(215, 189, 131, 0.5);
-  border-radius: 28px;
+  border: 2px solid rgba(215, 189, 131, 0.55);
+  border-radius: 180px 180px 28px 28px;
   box-shadow: 
-    0 25px 50px -10px rgba(0, 0, 0, 0.6),
-    0 0 35px rgba(215, 189, 131, 0.25),
-    inset 0 0 25px rgba(215, 189, 131, 0.12);
+    0 25px 50px -10px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(215, 189, 131, 0.35),
+    inset 0 0 25px rgba(215, 189, 131, 0.15);
   animation: floatCard 6s ease-in-out infinite alternate;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+
 .opening-card:hover {
-  box-shadow: 
+  box-shadow:
     0 30px 60px -10px rgba(0, 0, 0, 0.7),
     0 0 45px rgba(215, 189, 131, 0.35),
     inset 0 0 30px rgba(215, 189, 131, 0.18);
@@ -104,6 +87,7 @@ body {
   0% {
     transform: translateY(0px);
   }
+
   100% {
     transform: translateY(-8px);
   }
@@ -119,35 +103,43 @@ body {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  font-size: 10px;
-  font-weight: 600;
-  color: #eed8a1;
+  font-size: 11px;
+  font-weight: 700;
+  color: #785b28;
   margin: 0;
 }
 
-.opening h1, .hero h1 {
-  font: 400 clamp(58px, 12vw, 110px) "Great Vibes", cursive;
-  margin: 12px 0;
+.opening .eyebrow,
+.hero .eyebrow,
+.countdown .eyebrow,
+.closing .eyebrow {
+  color: #f3dfaa;
 }
 
-.opening h1 {
+.opening h1,
+.hero h1 {
+  font: 400 clamp(58px, 12vw, 110px) "Great Vibes", cursive;
+  margin: 12px 0;
   background: linear-gradient(135deg, #ffffff 0%, #f7e8c3 50%, #e5c583 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.4));
 }
 
-.opening h1 span, .hero h1 span {
+.opening h1 span,
+.hero h1 span {
   font: 400 0.45em "Cormorant Garamond", serif;
   -webkit-text-fill-color: #ebd399;
 }
+
 
 .script {
   font: 28px "Great Vibes", cursive;
   color: #f3edd8;
 }
 
-.opening-date, .date {
+.opening-date,
+.date {
   letter-spacing: 0.3em;
   font-size: 11px;
   color: #eed8a1;
@@ -221,19 +213,45 @@ body {
   display: grid;
   place-items: center;
   position: relative;
-  background: linear-gradient(135deg, #667c6c, #293d31 60%, #1f3027);
+  /* Grand Wedding Floral Arch Background with luxurious ambient gradient overlay */
+  background: 
+    radial-gradient(circle at 50% 40%, rgba(20, 36, 26, 0.45) 0%, rgba(10, 20, 14, 0.8) 100%),
+    linear-gradient(135deg, rgba(139, 30, 63, 0.3) 0%, rgba(215, 189, 131, 0.2) 50%, rgba(45, 95, 70, 0.35) 100%),
+    url('wedding_arch_bg.png') center/cover no-repeat;
   color: #fff;
   text-align: center;
+  overflow: hidden;
 }
 
-.hero:before, .closing:before {
+.hero:before,
+.closing:before {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.15), transparent 35%);
+  background: radial-gradient(circle at 50% 35%, rgba(255, 235, 190, 0.12) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.hero-content, .closing-content {
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 52px 40px;
+  max-width: 680px;
+  width: 90%;
+  margin: 20px auto;
+  background: rgba(18, 32, 24, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(215, 189, 131, 0.55);
+  border-radius: 200px 200px 32px 32px;
+  box-shadow: 
+    0 25px 55px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(215, 189, 131, 0.35),
+    inset 0 0 30px rgba(215, 189, 131, 0.15);
+}
+
+
+.closing-content {
   position: relative;
   padding: 40px 20px;
 }
@@ -241,6 +259,7 @@ body {
 .hero h1 {
   margin: 8px 0;
 }
+
 
 .large {
   font-size: 50px;
@@ -328,18 +347,25 @@ body {
 }
 
 .photo-frame {
+  position: relative;
   aspect-ratio: 4/5;
-  background: linear-gradient(145deg, #b4b09b, #667865);
-  display: grid;
-  place-items: center;
-  border: 12px solid #eee6d8;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  border-radius: 140px 140px 20px 20px;
+  overflow: hidden;
+  border: 6px solid #eee6d8;
+  outline: 2px solid #8b6e3f;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
 }
 
-.photo-placeholder {
-  font: 45px "Great Vibes", cursive;
-  color: rgba(255, 255, 255, 0.8);
-  text-align: center;
+.photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.photo-frame:hover .photo-img {
+  transform: scale(1.04);
 }
 
 .story-copy p:not(.eyebrow) {
@@ -352,6 +378,8 @@ body {
   text-align: center;
   color: #a58a59;
   margin-top: 35px;
+  font-size: 16px;
+  letter-spacing: 0.2em;
 }
 
 .events {
@@ -399,16 +427,23 @@ body {
 }
 
 .venue-image {
-  min-height: 520px;
-  background: linear-gradient(145deg, #667d6c, #2c4134);
-  display: grid;
-  place-items: center;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 140px 140px 0;
+  border-right: 4px solid #d7bd83;
 }
 
-.church-icon {
-  font-size: 110px;
-  color: #d7bd83;
-  font-family: Georgia, serif;
+.venue-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.venue-image:hover .venue-img {
+  transform: scale(1.05);
 }
 
 .venue-copy {
@@ -465,10 +500,19 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font: 25px "Cormorant Garamond", serif;
   background: linear-gradient(135deg, #9ba697, #526858);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.g:hover {
+  transform: translateY(-4px);
 }
 
 .g1 {
   grid-row: span 2;
+  background: linear-gradient(135deg, rgba(24, 44, 33, 0.4), rgba(10, 20, 14, 0.75)), url('wedding_arch_bg.png') center/cover no-repeat;
 }
 
 .g2 {
@@ -476,7 +520,7 @@ body {
 }
 
 .g3 {
-  background: linear-gradient(135deg, #728677, #334b3b);
+  background: linear-gradient(135deg, rgba(24, 44, 33, 0.3), rgba(10, 20, 14, 0.7)), url('church_venue.png') center/cover no-repeat;
 }
 
 .g4 {
@@ -485,7 +529,7 @@ body {
 }
 
 .g5 {
-  background: linear-gradient(135deg, #7c8e7e, #3c5545);
+  background: linear-gradient(135deg, rgba(24, 44, 33, 0.3), rgba(10, 20, 14, 0.7)), url('couple_portrait.png') center/cover no-repeat;
 }
 
 .closing {
@@ -495,8 +539,30 @@ body {
   text-align: center;
   color: #fff;
   position: relative;
-  background: linear-gradient(135deg, #617966, #24372b);
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(20, 36, 26, 0.6) 0%, rgba(10, 20, 14, 0.85) 100%),
+    linear-gradient(135deg, rgba(139, 30, 63, 0.3) 0%, rgba(215, 189, 131, 0.2) 50%, rgba(45, 95, 70, 0.35) 100%),
+    url('wedding_arch_bg.png') center/cover no-repeat;
 }
+
+.closing-content {
+  position: relative;
+  z-index: 2;
+  padding: 52px 40px;
+  max-width: 650px;
+  width: 90%;
+  margin: 20px auto;
+  background: rgba(18, 32, 24, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(215, 189, 131, 0.5);
+  border-radius: 180px 180px 28px 28px;
+  box-shadow: 
+    0 25px 50px -10px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(215, 189, 131, 0.25),
+    inset 0 0 25px rgba(215, 189, 131, 0.12);
+}
+
 
 .closing h2 {
   font: 500 clamp(45px, 8vw, 80px)/.95 "Cormorant Garamond", serif;
@@ -534,22 +600,30 @@ footer {
 }
 
 @media(max-width: 750px) {
-  .opening-card {
-    padding: 38px 22px;
-    margin: 16px;
+  .hero-content,
+  .opening-card,
+  .closing-content {
+    padding: 38px 20px;
+    border-radius: 120px 120px 24px 24px;
+    margin: 16px auto;
   }
 
-  .story, .venue {
+  .story,
+  .venue {
     grid-template-columns: 1fr;
   }
 
   .venue-image {
     min-height: 360px;
+    border-radius: 20px 20px 0 0;
+    border-right: none;
+    border-bottom: 4px solid #d7bd83;
   }
 
   .venue-copy {
-    padding: 70px 9%;
+    padding: 50px 7%;
   }
+
 
   .details {
     grid-template-columns: 1fr;
